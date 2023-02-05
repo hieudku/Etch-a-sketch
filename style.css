@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#gridBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: rgb(173, 205, 224);
+    border: 1px solid rgb(220, 233, 227);
+    height: 10px;
+    width: 10px;
+    box-sizing: border-box;
+}
