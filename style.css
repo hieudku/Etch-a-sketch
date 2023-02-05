@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    align-items: center;
     background-color: #f2f2f2;
   }
   
@@ -14,6 +15,12 @@ body {
     color: #333;
   }
   
+  h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+  }
   #menu {
     display: flex;
     justify-content: center;
@@ -31,7 +38,7 @@ body {
     font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 150px;
+    width: 50px;
     outline: none;
   }
   
@@ -62,6 +69,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
+    border: 5px solid rgb(45, 126, 156);
   }
   
   .grid {
