@@ -28,8 +28,8 @@ function createGrids () {
             createdBox.classList.add("box");
                 console.log('Total boxes: ' + totalBoxes);
             fragment.appendChild(createdBox);
-            createdBox.style.width = parseInt(gridWrapper.offsetWidth / userInput) + "px";
-            createdBox.style.heigth = parseInt(gridWrapper.offsetHeight / userInput) + "px";
+            createdBox.style.width = (gridWrapper.offsetWidth / userInput) + "px";
+            createdBox.style.heigth = (gridWrapper.offsetHeight / userInput) + "px";
 /* Click and hold for effect when mouse passes over. */
             createdBox.addEventListener("mousedown", function() {
                 mouseDown = true;
