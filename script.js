@@ -1,37 +1,34 @@
 /* wrap the click button function around the loop and other listeners
     in order to wait for user's input parsed first before loading the grids */
-    let userInput = 0; // global scope
-    let input = document.getElementById("myInput"); // input box
+let userInput = 0; // global scope
+let input = document.getElementById("myInput"); // input box
     input.addEventListener('keyup', function(event) {
         if (event.key === "Enter") {
             var inputValue = Number(this.value); // assign and convert input into number
             if (inputValue >= 10 && inputValue <= 100) {
                 userInput = inputValue; // if both ifs are true assign value to global scope as number to be used elsewhere
             }
-        
-
-/* Remove grids upon user's next input using while loop. */
-const removeGrids = document.getElementById("gridBox");
-while (removeGrids.firstChild) {
-    removeGrids.removeChild(removeGrids.firstChild);
-}
-createGrids(); // create grids when user enter input
+            const removeGrids = document.getElementById("gridBox");/* Remove grids upon user's next input using while loop. */
+            while (removeGrids.firstChild) {
+                removeGrids.removeChild(removeGrids.firstChild);
+            }
+            createGrids(); // create grids when user enter input
         }
 }); // end of Enter keyup eventlistener function.
 
-
-function createGrids () { /* Create grid boxes and fill color with mouse events */
+/* Create grid boxes and fill color with mouse events. */
+function createGrids () { 
     let mouseDown = false;
+    let fragment = document.createDocumentFragment();
     const totalBoxes = parseInt(userInput) ** 2;
     for(i = 0; i < totalBoxes; i++) { // Loop through the input and display the equal div boxes.
         const gridWrapper = document.getElementById("gridBox");
         let createdBox = document.createElement("div");
             createdBox.classList.add("box");
                 console.log('Total boxes: ' + totalBoxes);
-            gridWrapper.appendChild(createdBox);
+            fragment.appendChild(createdBox);
             createdBox.style.width = parseInt(gridWrapper.offsetWidth / userInput) + "px";
             createdBox.style.heigth = parseInt(gridWrapper.offsetHeight / userInput) + "px";
-
 /* Click and hold for effect when mouse passes over. */
             createdBox.addEventListener("mousedown", function() {
                 mouseDown = true;
@@ -46,6 +43,7 @@ function createGrids () { /* Create grid boxes and fill color with mouse events 
                 }
             });
     }
+    document.getElementById("gridBox").appendChild(fragment); // improve perfomance by append multiple boxes to the DOM at once.
 }
 /* function for reset button */
 let reset = document.getElementById("resetBtn"); // get reset button
