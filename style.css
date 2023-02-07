@@ -67,9 +67,9 @@ body {
   #gridBox {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin: 20px 0;
-    border: 5px solid rgb(45, 126, 156);
+    width: 600px;
+    height: 600px;
   }
   
   .grid {
@@ -93,7 +93,5 @@ body {
 .box {
     background-color: rgb(173, 205, 224);
     border: 1px solid rgb(220, 233, 227);
-    height: 10px;
-    width: 10px;
     box-sizing: border-box;
 }
