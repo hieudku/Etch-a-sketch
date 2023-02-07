@@ -1,5 +1,6 @@
 /* wrap the click button function around the loop and other listeners
     in order to wait for user's input parsed first before loading the grids */
+
 let userInput = 0; // global scope
 let input = document.getElementById("myInput"); // input box
     input.addEventListener('keyup', function(event) {
